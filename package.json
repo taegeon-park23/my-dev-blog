@@ -17,14 +17,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css &&  react-scripts start",
+    "build": "npm run watch:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint ./src/**/*.{ts,tsx}",
-    "lint:fix": "eslint ./src/**/*.{ts,tsx} --fix"
+    "lint:fix": "eslint ./src/**/*.{ts,tsx} --fix",
+    "watch:css": "postcss src/index.css"
   },
   "eslintConfig": {
     "extends": [
@@ -78,6 +79,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
     "prettier": "^2.8.2",
     "prop-types": "^15.8.1",
     "tailwindcss": "^3.2.4",
