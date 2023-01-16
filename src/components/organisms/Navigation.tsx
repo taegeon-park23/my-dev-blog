@@ -1,89 +1,90 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { BarsIcon } from '../../assets/icons/BarsIcon';
+import { SearchIcon } from '../../assets/icons/SearchIcon';
+import { Button } from '../atoms/Button/Button';
 
-const navigations = [
-  { name: 'Dashboard', link: '#', current: true },
-  { name: 'Team', link: '#', current: false },
-  { name: 'Projects', link: '#', current: false },
-  { name: 'Calendar', link: '#', current: false },
-];
-
-export function Navigation(): React.ReactElement {
-  const [isOpen, setIsOpen] = useState(false);
-
+export function Navigation() {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
-    <div>
-      <nav className="bg-subnumber">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <img
-                  className="w-8 h-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                  alt="Workflow"
-                />
-              </div>
-              <div className="hidden md:block">
-                <div className="flex items-baseline ml-10 space-x-4">
-                  <a
-                    href="#"
-                    className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-default hover:text-primary"
-                  >
-                    Dashboard
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="flex -mr-2 md:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className="inline-flex justify-center items-center p-2 text-gray-400 bg-gray-900 rounded-md hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                {!isOpen ? (
-                  <svg
-                    className="block w-6 h-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                ) : (
-                  <svg
-                    className="block w-6 h-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                )}
-              </button>
-            </div>
-          </div>
+    <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
+      <div className="container px-2 mx-auto flex flex-wrap items-center justify-between">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <Link
+            to="/home"
+            className="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+          >
+            Taenamoo
+          </Link>
+          <Button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="cursor-pointer text-xl leading-none border-none border-transparent bg-transparent block lg:hidden outline-none focus:outline-none text-blueGray-500"
+          >
+            <BarsIcon />
+          </Button>
+          <Button
+            className="cursor-pointer text-xl leading-none border-none border-transparent bg-transparent block lg:hidden outline-none focus:outline-none text-blueGray-500"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            <SearchIcon />
+          </Button>
         </div>
-
-        {isOpen ? (
-          <div className="md:hidden" id="mobile-menu">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div
+          className={`lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none${
+            navbarOpen ? ' block' : ' hidden'
+          }`}
+          id="example-navbar-warning"
+        >
+          <ul className="flex flex-col lg:flex-row list-none mr-auto">
+            <li className="flex items-center">
               <a
-                href="#"
-                className="block px-3 py-2 text-base font-medium rounded-md text-subnumber hover:bg-subnumber"
+                className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus?ref=nr-index-navbar"
               >
-                Dashboard
+                <i className="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" /> Docs
               </a>
-            </div>
-          </div>
-        ) : null}
-      </nav>
-    </div>
+            </li>
+          </ul>
+          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <li className="flex items-center">{/* <IndexDropdown /> */}</li>
+            <li className="flex items-center">
+              <a
+                className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-react%2F%23%2F"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="text-blueGray-400 fab fa-facebook text-lg leading-lg " />
+                <span className="lg:hidden inline-block ml-2">Share</span>
+              </a>
+            </li>
+
+            <li className="flex items-center">
+              <a
+                className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-react%2F%23%2F&text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20React%20UI%20Kit%20and%20Admin.%20Let%20Notus%20React%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level.%20"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="text-blueGray-400 fab fa-twitter text-lg leading-lg " />
+                <span className="lg:hidden inline-block ml-2">Tweet</span>
+              </a>
+            </li>
+
+            <li className="flex items-center">
+              <a
+                className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="https://github.com/creativetimofficial/notus-react?ref=nr-index-navbar"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="text-blueGray-400 fab fa-github text-lg leading-lg " />
+                <span className="lg:hidden inline-block ml-2">Star</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
