@@ -1,18 +1,37 @@
 import React from 'react';
 import { IconProp } from '@/types/icons/IconSvgProp';
 
+const DEFAULT_PROPS = {
+  fill: 'none',
+  viewBox: '0 0 24 24',
+  strokeWidth: 1.5,
+  stroke: 'currentColor',
+  className: 'w-6 h-6',
+  width: 24,
+  height: 24,
+};
+
 export function SearchIcon({ ...props }: IconProp): React.ReactElement {
-  const { fill, viewBox, strokeWidth, stroke, className, width, height } = props;
+  const {
+    fill = DEFAULT_PROPS.fill,
+    viewBox = DEFAULT_PROPS.viewBox,
+    strokeWidth = DEFAULT_PROPS.strokeWidth,
+    stroke = DEFAULT_PROPS.stroke,
+    className = DEFAULT_PROPS.className,
+    width = DEFAULT_PROPS.width,
+    height = DEFAULT_PROPS.height,
+  } = props;
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill={fill ?? 'none'}
-      viewBox={viewBox ?? '0 0 24 24'}
-      strokeWidth={strokeWidth ?? 1.5}
-      stroke={stroke ?? 'currentColor'}
-      className={className ?? 'w-6 h-6'}
-      width={width ?? 24}
-      height={height ?? 24}
+      fill={fill}
+      viewBox={viewBox}
+      strokeWidth={strokeWidth}
+      stroke={stroke}
+      className={className}
+      width={width}
+      height={height}
     >
       <path
         strokeLinecap="round"
