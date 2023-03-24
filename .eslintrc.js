@@ -5,9 +5,9 @@ module.exports = {
     'airbnb',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
   ],
   rules: {
     'react/require-default-props': 0,
