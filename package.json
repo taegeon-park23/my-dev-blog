@@ -2,6 +2,7 @@
   "name": "my-dev-blog",
   "version": "0.1.0",
   "private": true,
+  "type": "commonjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,20 +25,22 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "eslint:staged": "lint-staged",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepush": "npm run test:coverage",
+    "sync": "ts-node ./scripts/sync.ts"
   },
   "dependencies": {
     "@storybook/react-docgen-typescript-plugin": "^1.0.1",
-    "@types/node": "18.15.8",
-    "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "mysql2": "^3.2.0",
     "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scripts": "^5.0.1",
-    "typescript": "^4.9.4"
+    "sequelize": "^6.30.0",
+    "sequelize-typescript": "^2.1.5"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
@@ -55,6 +58,9 @@
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
     "@types/mdx": "^2.0.3",
+    "@types/node": "^18.15.9",
+    "@types/react": "^18.0.29",
+    "@types/sequelize": "^4.28.14",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "autoprefixer": "^10.4.0",
@@ -82,9 +88,14 @@
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.0",
     "prettier": "^2.5.1",
+    "reflect-metadata": "^0.1.13",
     "sass": "^1.43.4",
     "sass-loader": "^12.4.0",
+    "sequelize-cli": "^6.6.0",
     "style-loader": "^3.3.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^5.0.2",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
