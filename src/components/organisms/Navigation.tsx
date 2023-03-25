@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { BarsIcon } from '../../assets/icons/BarsIcon';
 import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { Button } from '../atoms/Button/Button';
@@ -10,12 +9,12 @@ export function Navigation() {
     <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
       <div className="container px-2 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <Link
-            to="/home"
+          <a
+            href="/home"
             className="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
           >
             Taenamoo
-          </Link>
+          </a>
           <Button
             onClick={() => setNavbarOpen(!navbarOpen)}
             className="cursor-pointer text-xl leading-none border-none border-transparent bg-transparent block lg:hidden outline-none focus:outline-none text-blueGray-500"

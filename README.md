@@ -88,3 +88,94 @@ like this:
 Resloves: #123
 See also: #456, #789
 ``` 
+
+```
+my-dev-blog
+├─ .babelrc
+├─ .eslintrc.js
+├─ .git
+├─ .gitignore
+├─ .npmrc
+├─ .prettierrc
+├─ .storybook
+│  ├─ main.js
+│  └─ preview.js
+├─ .vscode
+│  └─ settings.json
+├─ README.md
+├─ craco.config.js
+├─ jest.config.js
+├─ next-env.d.ts
+├─ next.config.js
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ next.svg
+│  ├─ thirteen.svg
+│  └─ vercel.svg
+├─ src
+│  ├─ app
+│  │  ├─ api
+│  │  │  └─ hello
+│  │  │     └─ route.ts
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  ├─ layout.tsx
+│  │  ├─ page.module.css
+│  │  └─ page.tsx
+│  ├─ assets
+│  │  ├─ icons
+│  │  │  ├─ BarsIcon.tsx
+│  │  │  └─ SearchIcon.tsx
+│  │  └─ styles
+│  │     └─ index.css
+│  ├─ components
+│  │  ├─ atoms
+│  │  │  └─ Button
+│  │  │     ├─ Button.mdx
+│  │  │     ├─ Button.scss
+│  │  │     ├─ Button.stories.tsx
+│  │  │     ├─ Button.test.tsx
+│  │  │     ├─ Button.tsx
+│  │  │     ├─ Button.types.ts
+│  │  │     └─ index.ts
+│  │  ├─ organisms
+│  │  │  ├─ Footer.tsx
+│  │  │  └─ Navigation.tsx
+│  │  ├─ pages
+│  │  │  └─ HomePage.tsx
+│  │  └─ templates
+│  │     └─ HomeTemplate.tsx
+│  ├─ hooks
+│  ├─ index.css
+│  ├─ reducers
+│  │  └─ modals.ts
+│  ├─ routes
+│  ├─ store
+│  │  └─ index.ts
+│  ├─ stories
+│  │  ├─ Header.stories.tsx
+│  │  ├─ Header.tsx
+│  │  ├─ Introduction.stories.mdx
+│  │  ├─ Page.stories.tsx
+│  │  ├─ Page.tsx
+│  │  ├─ assets
+│  │  │  ├─ code-brackets.svg
+│  │  │  ├─ colors.svg
+│  │  │  ├─ comments.svg
+│  │  │  ├─ direction.svg
+│  │  │  ├─ flow.svg
+│  │  │  ├─ plugin.svg
+│  │  │  ├─ repo.svg
+│  │  │  └─ stackalt.svg
+│  │  ├─ header.css
+│  │  └─ page.css
+│  └─ types
+│     ├─ icons
+│     │  └─ IconSvgProp.ts
+│     └─ mdx.d.ts
+├─ tailwind.config.js
+├─ tailwind.config.js_bak
+└─ tsconfig.json
+
+```

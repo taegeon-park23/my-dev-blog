@@ -12,6 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Page>;
 
+// eslint-disable-next-line react/function-component-definition -- We want to use the function component syntax.
 const Template: ComponentStory<typeof Page> = () => <Page />;
 
 export const LoggedOut = Template.bind({});

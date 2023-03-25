@@ -14,7 +14,12 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
+export function Header({
+  user = { name: 'none' },
+  onLogin,
+  onLogout,
+  onCreateAccount,
+}: HeaderProps) {
   return (
     <header>
       <div className="wrapper">
@@ -56,3 +61,7 @@ export function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
     </header>
   );
 }
+
+Header.defaultProps = {
+  user: { name: 'none' },
+};

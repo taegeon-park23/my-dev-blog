@@ -1,5 +1,5 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
 
 import { Header } from './Header';
 
@@ -12,6 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Header>;
 
+// eslint-disable-next-line react/function-component-definition -- We want to use the function component syntax.
 const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});

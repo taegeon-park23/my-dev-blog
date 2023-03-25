@@ -11,6 +11,13 @@ import './Button.scss';
  */
 export function Button(props: ButtonProps): ReactElement {
   const { children, className, disabled, loading, icon, onClick } = props;
+  const restProps = { ...props };
+  delete restProps.children;
+  delete restProps.className;
+  delete restProps.disabled;
+  delete restProps.loading;
+  delete restProps.icon;
+  delete restProps.onClick;
 
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -26,9 +33,9 @@ export function Button(props: ButtonProps): ReactElement {
   );
 
   return (
-    <div className={`Button ${loading ? 'opacity-50 cursor-not-allowed' : ''}}`}>
+    <div className={`Button${loading ? ' opacity-50 cursor-not-allowed' : ''}`}>
       <button
-        {...props} // eslint-disable-line react/jsx-props-no-spreading -- We want to pass all props to the button. This is a generic component. We don't know what props the user will want to pass.
+        {...restProps} // eslint-disable-line react/jsx-props-no-spreading -- We want to pass all props to the button. This is a generic component. We don't know what props the user will want to pass.
         type="button"
         disabled={!!loading || !!disabled}
         className={`${
@@ -39,9 +46,11 @@ export function Button(props: ButtonProps): ReactElement {
         {children}
         {icon ? <div className="Button__icon">{icon}</div> : null}
       </button>
-      <div className="Button__loading">
-        <div className="Button__loading__spinner" />
-      </div>
+      {loading ? (
+        <div className="Button__loading">
+          <div className="Button__loading__spinner" />
+        </div>
+      ) : null}
     </div>
   );
 }

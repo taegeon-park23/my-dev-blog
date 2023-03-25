@@ -20,6 +20,16 @@ $button-spinner-animation: spin 0.6s linear infinite;
   display: flex;
   position: relative;
   width: fit-content;
+
+  button {
+    display: flex;
+  }
+  
+}
+
+// Icon int button component
+.Button__icon {
+  margin-left: 0.5em;
 }
 
 // Loading in button component
@@ -42,9 +52,4 @@ $button-spinner-animation: spin 0.6s linear infinite;
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: $button-spinner-animation;
-}
-
-// Icon int button component
-.Button__icon {
-  margin-left: 0.5em;
 }
