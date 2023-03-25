@@ -6,6 +6,7 @@ const nextConfig = {
   babel: {
     presets: ['next/babel', '@babel/preset-react'],
   },
+  swcMinify: false,
 };
 
 module.exports = nextConfig;
