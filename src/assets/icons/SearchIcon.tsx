@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconProp } from '@/types/icons/IconSvgProp';
+import { IconProp } from '@/src/types/icons/IconSvgProp';
 
 const DEFAULT_PROPS = {
   fill: 'none',

@@ -2,7 +2,6 @@
   "name": "my-dev-blog",
   "version": "0.1.0",
   "private": true,
-  "type": "commonjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -30,8 +29,7 @@
     "sync": "ts-node ./scripts/sync.ts"
   },
   "dependencies": {
-    "@storybook/react-docgen-typescript-plugin": "^1.0.1",
-    "@types/react-dom": "18.0.11",
+    "cross-env": "^7.0.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "mysql2": "^3.2.0",
@@ -43,6 +41,7 @@
     "sequelize-typescript": "^2.1.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2",
     "@babel/preset-react": "^7.18.6",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
@@ -60,6 +59,7 @@
     "@types/mdx": "^2.0.3",
     "@types/node": "^18.15.9",
     "@types/react": "^18.0.29",
+    "@types/react-dom": "18.0.11",
     "@types/sequelize": "^4.28.14",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
@@ -76,6 +76,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-testing-library": "^5.0.0",
     "eslint-plugin-testing-library-react": "^15.1.4",
     "eslint-plugin-unicorn": "^37.0.1",

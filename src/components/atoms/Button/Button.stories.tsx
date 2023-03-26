@@ -1,7 +1,7 @@
 // src/components/atoms/Button/Button.stories.tsx
 import { Story, Meta } from '@storybook/react';
 import React from 'react';
-import { SearchIcon } from '@/assets/icons/SearchIcon';
+import { SearchIcon } from '@/src/assets/icons/SearchIcon';
 import { Button } from './Button';
 import { ButtonProps } from './Button.types';
 

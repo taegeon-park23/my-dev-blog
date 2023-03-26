@@ -13,7 +13,16 @@ module.exports = {
     builder: '@storybook/builder-webpack5',
   },
   webpackFinal: async (config) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, '../src/');
+    config.resolve.alias['@'] = path.resolve(__dirname, '../');
     return config;
+  },
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: false,
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
   },
 };

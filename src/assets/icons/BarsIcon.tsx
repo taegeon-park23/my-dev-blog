@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { IconProp } from '@/types/icons/IconSvgProp';
+import { IconProp } from '@/src/types/icons/IconSvgProp';
 
 export function BarsIcon(props: IconProp): ReactElement {
   const { fill, viewBox, strokeWidth, stroke, className, width, height } = props;
